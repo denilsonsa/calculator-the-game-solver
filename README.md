@@ -9,6 +9,8 @@ The game consists of a calculator with only a few buttons for very specific oper
 
 This solver explores all possible numbers that can be reached given the initial conditions. This is done by a [breadth-first search][bfs] that builds a [directed][] [graph][] of numbers.
 
+[Open the solver online, in your browser!][solver]
+
 How to use this solver?
 -----------------------
 
@@ -106,6 +108,7 @@ This is the list of dev tasks that are planned (but with no date):
 * Proper error handling and error reporting (both error messages and CSS styling for wrong input).
 * Better layout.
 
+[solver]: http://denilsonsa.github.io/calculator-the-game-solver/solver.html
 [game]: http://www.simplemachine.co/game/calculator-the-game/
 [android]: https://play.google.com/store/apps/details?id=com.sm.calculateme
 [ios]: https://itunes.apple.com/us/app/calculator-the-game/id1243055750
