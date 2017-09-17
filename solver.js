@@ -139,6 +139,18 @@ function parse_single_operation(str) {
 				return function(value) { return -value; };
 			},
 		},
+		{
+			're': /^(r|re|rev|reverse)$/i,
+			'name': 'reverse',
+			'parse': function(match) {
+				return function(value) {
+					var sign = value < 0 ? -1 : 1;
+					var s = Math.abs(value) + '';
+					var r = s.split('').reverse().join('');
+					return sign * parseInt(r, 10);
+				};
+			},
+		},
 	];
 
 	str = str.trim();
@@ -148,7 +160,9 @@ function parse_single_operation(str) {
 			return new CalculatorButton(str, pat.name, pat.parse.apply(null, match));
 		}
 	}
-	// TODO: Some error handling.
+
+	document.getElementById('error').textContent += 'Unrecognized operation: ' + str + '\n';
+	return null;
 }
 
 function parse_operations(str) {
@@ -161,6 +175,8 @@ function parse_operations(str) {
 	);
 	var buttons = lines.map(
 		line => parse_single_operation(line)
+	).filter(
+		button => button !== null
 	);
 	return buttons;
 }
@@ -292,6 +308,12 @@ function toggle_collapse(ev) {
 function init() {
 	var solution_tree = document.getElementById('solution_tree');
 	solution_tree.addEventListener('click', toggle_collapse);
+
+	document.getElementById('the_form').addEventListener('submit', function(ev) {
+		ev.preventDefault();
+		document.getElementById('error').textContent = '';
+		do_it();
+	});
 }
 
 init();

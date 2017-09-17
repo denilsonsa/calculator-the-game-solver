@@ -11,6 +11,10 @@ html, body {
 label {
 	display: block;
 }
+#error {
+	color: red;
+	white-space: pre-wrap;
+}
 .subtree {
 	background: rgba(191, 191, 191, 0.125);
 	color: #808080;
@@ -94,15 +98,20 @@ ga('send', 'pageview');
 <body>
 
 <h1>Calculator: The Game — Solver</h1>
-<p><a href="https://github.com/denilsonsa/calculator-the-game-solver">Need help? Read more at GitHub.</a></p>
-<form onsubmit="do_it(); return false;">
-	<label>Moves: <input type="number" id="input_moves" value="3" min="1" step="1" required></label>
-	<label>Start value: <input type="number" id="input_start" value="0" required></label>
-	<label>Operations: <textarea id="input_operations" rows="5"></textarea></label>
-	<label>Goal: <input type="number" id="input_goal" value="0"></label>
-	<input type="submit" value="do_it">
+<p><a href="https://github.com/denilsonsa/calculator-the-game-solver/blob/master/README.md">Need help? Read more at GitHub.</a></p>
+<form id="the_form">
+	<fieldset>
+		<legend>Input</legend>
+		<label>Moves: <input type="number" id="input_moves" value="3" min="1" step="1" required></label>
+		<label>Start value: <input type="number" id="input_start" value="0" required></label>
+		<label>Operations: <textarea id="input_operations" rows="5"></textarea></label>
+		<label>Goal: <input type="number" id="input_goal" value="0"></label>
+	</fieldset>
+	<p><input type="submit" value="Solve it!"></p>
 </form>
-<textarea id="debug_graphviz"></textarea>
+<div id="error"></div>
+<label><a href="http://www.graphviz.org/content/dot-language">Graphviz</a> output: <textarea id="debug_graphviz" readonly></textarea></label>
+<p>Solution tree:</p>
 <div id="solution_tree"></div>
 
 </body>
