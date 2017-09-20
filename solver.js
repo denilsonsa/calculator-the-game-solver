@@ -151,6 +151,18 @@ function parse_single_operation(str) {
 				};
 			},
 		},
+		{
+			're': /^(s|sum)$/i,
+			'name': 'sum',
+			'parse': function(match) {
+				return function(value) {
+					var sign = value < 0 ? -1 : 1;
+					var str = Math.abs(value) + '';
+					var sum = str.split('').map(c => parseInt(c, 10)).reduce((x, y) => x + y, 0);
+					return sign * sum;
+				};
+			},
+		},
 	];
 
 	str = str.trim();

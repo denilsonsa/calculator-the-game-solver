@@ -34,6 +34,7 @@ These are all the operations recognized by the solver. Some of them support mult
 * Exponentiation: `x**2`, `x^2`, `x²`, `**3`, `^3`, `³`
 * Signal: `+/-`, `-/+`, `+-`, `-+`, `±`, `∓`
 * Reverse: `r`, `re`, `rev`, `reverse`
+* Sum: `s`, `sum`
 
 ELI5 How does this solver work?
 -------------------------------
