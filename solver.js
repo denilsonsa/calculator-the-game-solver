@@ -90,7 +90,7 @@ function parse_single_operation(str) {
 			},
 		},
 		{
-			're': /^(<<|b|ba|bac|back|backspace)$/i,
+			're': /^(<<|b|ba|bac|back|backs|backsp|backspace)$/i,
 			'name': 'backspace',
 			'parse': function(match, backspace) {
 				// This works for both positive and negative numbers because:
@@ -140,7 +140,7 @@ function parse_single_operation(str) {
 			},
 		},
 		{
-			're': /^(r|re|rev|reverse)$/i,
+			're': /^(r|re|rev|reve|rever|revers|reverse)$/i,
 			'name': 'reverse',
 			'parse': function(match) {
 				return function(value) {
@@ -189,6 +189,20 @@ function parse_single_operation(str) {
 				};
 			},
 		},
+		{
+			're': /^(m|mi|mir|mirr|mirro|mirror)$/i,
+			'name': 'mirror',
+			'parse': function(match) {
+				return function(value) {
+					var sign = value < 0 ? -1 : 1;
+					var str = Math.abs(value) + '';
+					var arr = str.split('');
+					var mir = arr.concat([]);
+					mir.reverse();
+					return sign * parseInt(arr.join('') + mir.join(''), 10);
+				};
+			},
+		},
 	];
 
 	str = str.trim();
@@ -227,7 +241,8 @@ function breadth_first_search(start_node, operations) {
 		if (node.moves_left <= 0) continue;  // or break
 		for (let op of operations) {
 			let new_value = op.exec(node.value);
-			if (!Number.isInteger(new_value)) continue;  // Only integers. TODO: make this configurable.
+			if (!Number.isInteger(new_value)) continue;  // Only integers.
+			if (Math.abs(new_value) >= 1000000) continue;  // Too large.
 			if (!g.get_node(new_value)) {
 				let new_node = new Node(new_value, node.moves_left - 1);
 				g.add_node(new_node);

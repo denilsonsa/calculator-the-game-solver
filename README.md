@@ -36,6 +36,7 @@ These are all the operations recognized by the solver. Some of them support mult
 * Reverse: `r`, `re`, `rev`, `reverse`
 * Sum: `s`, `sum`
 * Shift: `<`, `>`, `<shift`, `shift>`
+* Mirror: `m`, `mi`, `mir`, `mirror`
 
 ELI5 How does this solver work?
 -------------------------------
