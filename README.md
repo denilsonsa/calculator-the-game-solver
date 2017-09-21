@@ -38,6 +38,10 @@ These are all the operations recognized by the solver. Some of them support mult
 * Shift: `<`, `>`, `<shift`, `shift>`
 * Mirror: `m`, `mi`, `mir`, `mirror`
 
+### Not supported (yet)
+
+* `[+] 1`, which changes the values of the other buttons.
+
 ELI5 How does this solver work?
 -------------------------------
 
