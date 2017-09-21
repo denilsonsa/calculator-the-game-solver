@@ -29,12 +29,13 @@ These are all the operations recognized by the solver. Some of them support mult
 * Multiplication: `x2`, `X2`, `*2`, `x-3`, `X-3`, `*-3`
 * Division: `/2`, `/-3`
 * Typing numbers: `2`, `42`
-* Backspace: `<<`
+* Backspace: `<<`, `b`, `back`, `backspace`
 * Substitution: `1=>2`, `42=>13`
 * Exponentiation: `x**2`, `x^2`, `x²`, `**3`, `^3`, `³`
 * Signal: `+/-`, `-/+`, `+-`, `-+`, `±`, `∓`
 * Reverse: `r`, `re`, `rev`, `reverse`
 * Sum: `s`, `sum`
+* Shift: `<`, `>`, `<shift`, `shift>`
 
 ELI5 How does this solver work?
 -------------------------------

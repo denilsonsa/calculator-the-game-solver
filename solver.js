@@ -90,7 +90,7 @@ function parse_single_operation(str) {
 			},
 		},
 		{
-			're': /^(<<?)$/,
+			're': /^(<<|b|ba|bac|back|backspace)$/i,
 			'name': 'backspace',
 			'parse': function(match, backspace) {
 				// This works for both positive and negative numbers because:
@@ -108,7 +108,7 @@ function parse_single_operation(str) {
 			},
 		},
 		{
-			're': /^x?\s*(\^|\*\*)\s*([0-9])$/,
+			're': /^[xX]?\s*(\^|\*\*)\s*([0-9])$/,
 			'name': 'power',
 			'parse': function(match, operator, exp) {
 				var x = parseInt(exp, 10);
@@ -116,7 +116,7 @@ function parse_single_operation(str) {
 			},
 		},
 		{
-			're': /^x?\s*([²³⁴⁵⁶⁷⁸⁹])$/,
+			're': /^[xX]?\s*([²³⁴⁵⁶⁷⁸⁹])$/,
 			'name': 'power',
 			'parse': function(match, exp) {
 				var x = {
@@ -160,6 +160,32 @@ function parse_single_operation(str) {
 					var str = Math.abs(value) + '';
 					var sum = str.split('').map(c => parseInt(c, 10)).reduce((x, y) => x + y, 0);
 					return sign * sum;
+				};
+			},
+		},
+		{
+			're': /^<\s*(s|sh|shi|shif|shift)?$/i,
+			'name': 'shiftleft',
+			'parse': function(match) {
+				return function(value) {
+					var sign = value < 0 ? -1 : 1;
+					var str = Math.abs(value) + '';
+					var arr = str.split('');
+					arr.push(arr.shift());
+					return sign * parseInt(arr.join(''), 10);
+				};
+			},
+		},
+		{
+			're': /^(s|sh|shi|shif|shift)?\s*>$/i,
+			'name': 'shiftright',
+			'parse': function(match) {
+				return function(value) {
+					var sign = value < 0 ? -1 : 1;
+					var str = Math.abs(value) + '';
+					var arr = str.split('');
+					arr.unshift(arr.pop());
+					return sign * parseInt(arr.join(''), 10);
 				};
 			},
 		},
