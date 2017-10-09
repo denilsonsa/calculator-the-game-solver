@@ -1,5 +1,9 @@
 'use strict';
 
+// Given a Map object and a key...
+// return the value from that key,
+// or set the default_value and return it.
+// Emulates the behavior of Python's dict.setdefault() method.
 function map_get_or_set(map, key, default_value) {
 	if (map.has(key)) return map.get(key);
 	map.set(key, default_value);
@@ -23,7 +27,7 @@ function Graph(start_node) {
 Graph.prototype.get_node = function(value) {
 	// Returns undefined if node is not in the Map.
 	return this.node_map.get(value);
-}
+};
 
 Graph.prototype.add_node = function(node) {
 	if (this.node_map.has(node.value)) {
@@ -32,7 +36,7 @@ Graph.prototype.add_node = function(node) {
 	this.node_list.push(node);
 	this.node_map.set(node.value, node);
 	map_get_or_set(this.nodes_by_moves, node.moves_left, []).push(node);
-}
+};
 
 function Node(value, moves_left) {
 	this.value = value;

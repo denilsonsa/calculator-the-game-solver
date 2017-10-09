@@ -41,6 +41,10 @@ These are all the operations recognized by the solver. Some of them support mult
 ### Not supported (yet)
 
 * `[+] 1`, which changes the values of the other buttons.
+    * Note that pressing `[+] 1` will change a `-2` to `-3`.
+    * What happens if there are multiple buttons like this? Will this button affect the value of other `[+] x` buttons?
+* `Store`, which can hold a value (zero-cost) and type that value (1-movement cost).
+    * How does it interact with `[+] 1`? Maybe it doesn't, and they can't be used together.
 
 ELI5 How does this solver work?
 -------------------------------
