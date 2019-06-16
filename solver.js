@@ -214,6 +214,17 @@ function parse_single_operation(str) {
 				return function(value) { return value * -1; };
 			},
 		},
+		{
+			're': /^inv10$/i,
+			'name': 'inv10',
+			'parse': function(match) {
+				return function(value) {
+					return parseInt(String(value).replace(/(\d)/g, function(match, digit) {
+						return [0,9,8,7,6,5,4,3,2,1][parseInt(digit)];
+					}));
+				};
+			},
+		},
 	];
 
 	str = str.trim();
