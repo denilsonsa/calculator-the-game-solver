@@ -37,6 +37,7 @@ These are all the operations recognized by the solver. Some of them support mult
 * Sum: `s`, `sum`
 * Shift: `<`, `>`, `<shift`, `shift>`
 * Mirror: `m`, `mi`, `mir`, `mirror`
+* Flip: `+/-`, `flip`
 
 ### Not supported (yet)
 

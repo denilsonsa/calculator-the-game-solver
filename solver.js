@@ -207,6 +207,13 @@ function parse_single_operation(str) {
 				};
 			},
 		},
+		{
+			're': /^(\+\/-|flip)$/,
+			'name': 'flip',
+			'parse': function(match) {
+                return function(value) { return value * -1; };
+			},
+		},
 	];
 
 	str = str.trim();
