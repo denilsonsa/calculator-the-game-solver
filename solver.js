@@ -211,7 +211,7 @@ function parse_single_operation(str) {
 			're': /^(\+\/-|flip)$/i,
 			'name': 'flip',
 			'parse': function(match) {
-                return function(value) { return value * -1; };
+				return function(value) { return value * -1; };
 			},
 		},
 	];
