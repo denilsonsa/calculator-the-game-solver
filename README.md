@@ -1,7 +1,7 @@
 Calculator: The Game — Solver
 =============================
 
-[![Donate using PayPal](https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=denilsonsa%40gmail%2ecom&lc=US&item_name=Denilson&item_number=calculator-solver&currency_code=BRL) [![Flattr this project](https://api.flattr.com/button/flattr-badge-large.png)](https://flattr.com/submit/auto?user_id=denilsonsa&url=https%3A%2F%2Fgithub.com%2Fdenilsonsa%2Fcalculator-solver&title=Calculator+solver&description=Solver+for+Calculator+The+Game.&tags=github&category=software)
+[Donation - buy me a coffee](https://denilson.sa.nom.br/donate.html)
 
 This is a tool to help solving levels from [Calculator: The Game][game], (a game [for Android][android] and [for iOS][ios]).
 
