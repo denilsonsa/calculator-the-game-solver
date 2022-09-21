@@ -3,7 +3,7 @@ Calculator: The Game — Solver
 
 [Donation - buy me a coffee](https://denilson.sa.nom.br/donate.html)
 
-This is a tool to help solving levels from [Calculator: The Game][game], (a game [for Android][android] and [for iOS][ios]).
+This is a tool to help solving levels from [Calculator: The Game][game], (a game [for Android][android] and [for iOS][ios]). There is also [a non-official re-implementation of the game playable in the browser](https://github.com/Jorger/Calculator_The_Game_ReactJS).
 
 The game consists of a calculator with only a few buttons for very specific operations, and a limited number of moves (button presses) to get to a specific goal number.
 
