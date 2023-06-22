@@ -120,8 +120,8 @@ This is the list of dev tasks that are planned (but with no date):
 * Proper error handling and error reporting (both error messages and CSS styling for wrong input).
 * Better layout.
 
-[solver]: http://denilsonsa.github.io/calculator-the-game-solver/solver.html
-[game]: http://www.simplemachine.co/game/calculator-the-game/
+[solver]: https://denilsonsa.github.io/calculator-the-game-solver/solver.html
+[game]: https://web.archive.org/web/20210912164304/http://www.simplemachine.co/game/calculator-the-game/
 [android]: https://play.google.com/store/apps/details?id=com.sm.calculateme
 [ios]: https://itunes.apple.com/us/app/calculator-the-game/id1243055750
 [bfs]: https://en.wikipedia.org/wiki/Breadth-first_search
